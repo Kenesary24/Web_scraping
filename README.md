@@ -5,7 +5,6 @@ A multithreaded parser written in Python using Selenium that collects phone numb
 ##  Disclaimer !
 > This tool is developed for **educational purposes only**. 
 > The author does not encourage violating the Terms of Use of any website. 
-> Please refer to the [Terms of Use of krisha.kz](https://krisha.kz/info/rules/) before using this tool.
 
 ## Features
 - Multithreaded scraping with `ThreadPoolExecutor`
