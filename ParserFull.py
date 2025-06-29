@@ -75,27 +75,12 @@ def save_to_excel(data, filename="autosave_results.xlsx"):
 #  Парсинг страницы объявления
 # ——————————————————————————————————————————————————————————————
 
-def is_owner(driver):
-    try:
-        elem = driver.find_element(By.CSS_SELECTOR, "div.owners__name.owners__name--large")
-        text = elem.text.strip().lower()
-        print(f"🧾 Автор: {text}")
-        return "хозяин недвижимости" in text
-    except Exception as e:
-        print(f"⚠️ Не удалось определить автора: {e}")
-        return False
-
 def parse_listing(driver, url):
     driver.get(url)
     WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.CSS_SELECTOR, 'div.offer__advert-title'))
     )
     click_empty_space(driver)
-
-    if not is_owner(driver):
-        print("⛔ Пропуск: это не хозяин недвижимости")
-        return None
-
     phone = extract_phone(driver)
     return [url, phone]
 
