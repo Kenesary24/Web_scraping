@@ -8,7 +8,6 @@ A multithreaded parser written in Python using Selenium that collects phone numb
 
 ## Features
 - Multithreaded scraping with `ThreadPoolExecutor`
-- Bypasses non-owner listings
 - Extracts phone numbers from listings
 - Saves results to Excel with autosave support
 - Handles pagination and allows custom page limits
